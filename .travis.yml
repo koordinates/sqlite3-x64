@@ -97,7 +97,7 @@ before_script:
 
   # zip the binaries
   - "mkdir sqlite-tools-linux-x64-${S64_VERSION}"
-  - "echo These are UNOFFICIAL SQLite precompiled binaries for linux x64, see https://github.com/boramalper/sqlite3-x64 for details. > sqlite-tools-linux-x64-${S64_VERSION}/NOTICE"
+  - "echo These are UNOFFICIAL SQLite precompiled binaries for linux x64, see https://github.com/jgraeve/sqlite3-x64 for details. > sqlite-tools-linux-x64-${S64_VERSION}/NOTICE"
   - "cp sqldiff sqlite3 sqlite3_analyzer CHECKSUMS.sha1 sqlite-tools-linux-x64-${S64_VERSION}/"
   - "zip -r sqlite-tools-linux-x64-${S64_VERSION}.zip sqlite-tools-linux-x64-${S64_VERSION}/ -9 -v"
   - "sha1sum sqlite-tools-linux-x64-${S64_VERSION}.zip | tee sqlite-tools-linux-x64-${S64_VERSION}.zip.sha1"
@@ -107,8 +107,8 @@ script:
 
 before_deploy:
   # Set up git user name and tag this commit
-  - git config --local user.name "Bora M. Alper"
-  - git config --local user.email "bora@boramalper.org"
+  - git config --local user.name "Johan De Graeve"
+  - git config --local user.email "johan@jdegraeve.be"
   # $ git help check-ref-format
   #
   # 2. They must contain at least one /. This enforces the presence of a
@@ -124,12 +124,12 @@ deploy:
   api_key:
     secure: qzaOZ4K7QvEmSoij71PYqgQlxK/AtN9YelFVJwQzqt8Q8cxqqccXtoSciPQHN2nZEVUb2C7qk7bN93vkxL7Id8eN9FpBGx96kqlJqkYZDGJgGKTr+Fq4XuXjZjO2S9qpOJCDXpGOTKJE9qnMV7j08ax1u9OGAw7zeUfRjd1LgIAJEpFLzWGm3GTYy0hLtfrxtD4hodkLaIkA9azgWaKJWwRf0gqc25Ev8PElMGuYov7LtGNmb9V7hpVAqa55vSq32dvVreAoqomfxShmKjwpWP9P2fwxgc/F8XPFcySmxqwGWXfvrxoViQmVqfdW0ZKaBHm1VZkcfc9O6NL90AS2KpNYIn/fgigdPErxqfXP2GFWLVCuHmWVOhU+FoQjq8+sDnvbhOot1zE8NJD/7/HzBYnYK1N1gaf35gXfHHvi5tmnBC2tJ9LMiBk5i51Bgv+hPHLaOo6uYOddVxbOhGOQjek+zs4JmJ3Mqg0ACFC8BvEb8/rrd0qyP4DG+5btpQeDWMGADR9dApdekQnd7UIar9upiQnIQ/UuqKKDsbsx3xQPK1cjfXUbour5PkFe1ckkrGK1S5dDd7ZT2ql/u7GhWZw8W6SOOyTYdeYzW9awqciJQCcg4Sm1xnB4g2KuVxQLHGu1UMzFgb6n7al3i6twwcamVNTvZsjVj7Kbuz6JJnw=
   file:
-    - "/home/travis/build/boramalper/sqlite3-x64/sqlite-src/sqldiff"
-    - "/home/travis/build/boramalper/sqlite3-x64/sqlite-src/sqlite3"
-    - "/home/travis/build/boramalper/sqlite3-x64/sqlite-src/sqlite3_analyzer"
-    - "/home/travis/build/boramalper/sqlite3-x64/sqlite-src/CHECKSUMS.sha1"
-    - "/home/travis/build/boramalper/sqlite3-x64/sqlite-src/sqlite-tools-linux-x64-${S64_VERSION}.zip"
-    - "/home/travis/build/boramalper/sqlite3-x64/sqlite-src/sqlite-tools-linux-x64-${S64_VERSION}.zip.sha1"
+    - "/home/travis/build/jgraeve/sqlite3-x64/sqlite-src/sqldiff"
+    - "/home/travis/build/jgraeve/sqlite3-x64/sqlite-src/sqlite3"
+    - "/home/travis/build/jgraeve/sqlite3-x64/sqlite-src/sqlite3_analyzer"
+    - "/home/travis/build/jgraeve/sqlite3-x64/sqlite-src/CHECKSUMS.sha1"
+    - "/home/travis/build/jgraeve/sqlite3-x64/sqlite-src/sqlite-tools-linux-x64-${S64_VERSION}.zip"
+    - "/home/travis/build/jgraeve/sqlite3-x64/sqlite-src/sqlite-tools-linux-x64-${S64_VERSION}.zip.sha1"
   skip_cleanup: true
   on:
-    repo: "boramalper/sqlite3-x64"
+    repo: "jgraeve/sqlite3-x64"
