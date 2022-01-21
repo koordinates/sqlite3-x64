@@ -21,6 +21,8 @@ database for a quick query...
 
 
 ## Building Process
+The automatic building process doesn't work on this fork since it uses Travis CI, which I haven't configured.
+
 1. This repository contains a file called `sqlite-src.url` which contains the
    URL to the source code of the latest release of SQLite.
 
